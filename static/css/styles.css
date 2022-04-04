@@ -1,31 +1,55 @@
-div.container.main{
-    margin-top: 20px;
-    margin-left: 20%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.navbar{
+    background-color:#F5F5F5;
+    margin-top: 10px;
 }
 
-#ticker.form-control-md{
+.navbar-brand{
+    color: #2C3333;
+    font-weight: 900;
+}
+
+.nav-link{
+    color: #2C3333;
+    font-weight: 600;
+}
+
+div.container.main{
+    width: 60%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+}
+
+input#ticker.form-control{
     border-top-width: 1px;
     border-left-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;
     margin-left: 1px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+    border-radius: 5px;
+    padding: 10px;
     margin-right: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
-form.input-group.mb-3{
-    height: 45px;
-    width: 750px;
+form.input-group{
+    height: 50px;
+    width: 800px;
 }
 
 label.input-group-text{
     padding-right: 10px;
     margin-right: 3px;
+    width: 250px;
+    font-weight: 600;
+    border: transparent;
+    border-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+input#submit.btn.btn-primary {
+    margin-left: 3px;
+    border-radius: 5px;
+    background: #064663;
 }
 
 div.container.insights-main{
@@ -39,6 +63,10 @@ table{
     border-collapse: separate;
 }
 
+thead{
+    background-color: #F5F5F5;
+}
+
 th{
     font-size: 12px;
     width: 60px;
@@ -48,16 +76,29 @@ td{
     font-size: 12px;
 }
 
-td.negative-dma-chg{
+.negative-dma-chg{
     color: #E83A14;
     font-weight: 500;
 }
 
-td.positive-dma-chg{
+.positive-dma-chg{
     color: #4E9F3D;
     font-weight: 500;
 }
 
 .date{
     width: 10%;
+}
+
+.tcc{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 124px;
+    text-align: center;
+    border-bottom: 2px solid;
+    border-color: #141E27;
+}
+
+div.row{
+    margin-bottom: 20px;
 }

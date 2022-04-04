@@ -3,13 +3,25 @@
 
 {% block title %}
 
-    <title> H&N Moving Averages </title>
+    <title>Moving Averages </title>
 
 {% endblock %}
 
 {% block content %}
 
     <div class="container insights-main">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-3 tcc">{{session['ticker']}}</div>
+                <div class="col-6 col-sm-3 tcc">{{session['Close'][-1]}}</div>
+                {% if session['% Change'][-1] > 0 %}
+                    <div class="col-6 col-sm-3 tcc positive-dma-chg">{{session['% Change'][-1]}}% &#x2191</div>
+                {% else %}
+                    <div class="col-6 col-sm-3 tcc negative-dma-chg">{{session['% Change'][-1]}}% &#x2193</div>
+                {% endif %}
+            </div>
+          </div>
 
         <table class="table">
             <thead>
@@ -45,39 +57,39 @@
                 <td>{{ item[7] }}</td>
                 <td>{{ item[8] }}</td>
                 {% if item[9] > 0 %}
-                    <td class="positive-dma-chg">{{ item[9] }}</td>
+                    <td class="positive-dma-chg">{{ item[9] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[9] }}</td>
+                    <td class="negative-dma-chg">{{ item[9] }}%</td>
                 {% endif %}
                 {% if item[10] > 0 %}
-                    <td class="positive-dma-chg">{{ item[10] }}</td>
+                    <td class="positive-dma-chg">{{ item[10] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[10] }}</td>
+                    <td class="negative-dma-chg">{{ item[10] }}%</td>
                 {% endif %}
                 {% if item[11] > 0 %}
-                    <td class="positive-dma-chg">{{ item[11] }}</td>
+                    <td class="positive-dma-chg">{{ item[11] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[11] }}</td>
+                    <td class="negative-dma-chg">{{ item[11] }}%</td>
                 {% endif %}
                 {% if item[12] > 0 %}
-                    <td class="positive-dma-chg">{{ item[12] }}</td>
+                    <td class="positive-dma-chg">{{ item[12] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[12] }}</td>
+                    <td class="negative-dma-chg">{{ item[12] }}%</td>
                 {% endif %}
                 {% if item[13] > 0 %}
-                    <td class="positive-dma-chg">{{ item[13] }}</td>
+                    <td class="positive-dma-chg">{{ item[13] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[13] }}</td>
+                    <td class="negative-dma-chg">{{ item[13] }}%</td>
                 {% endif %}
                 {% if item[14] > 0 %}
-                    <td class="positive-dma-chg">{{ item[14] }}</td>
+                    <td class="positive-dma-chg">{{ item[14] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[14] }}</td>
+                    <td class="negative-dma-chg">{{ item[14] }}%</td>
                 {% endif %}
                 {% if item[15] > 0 %}
-                    <td class="positive-dma-chg">{{ item[15] }}</td>
+                    <td class="positive-dma-chg">{{ item[15] }}%</td>
                 {% else %}
-                    <td class="negative-dma-chg">{{ item[15] }}</td>
+                    <td class="negative-dma-chg">{{ item[15] }}%</td>
                 {% endif %}
               </tr>
             </tbody>

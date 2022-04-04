@@ -20,6 +20,10 @@ def fetch_data(ticker):
     security_df = yf.Ticker(ticker).history(start="2010-01-01", end="2023-01-01")
     return security_df
 
+def daily_returns(df):
+    df["daily_returns"] = ((df["Close"]/df["Close"].shift(1)) - 1)*100
+    return df
+
 class InfoForm(FlaskForm):
 
     ticker = StringField("Enter the ticker symbol", validators=[DataRequired()])
@@ -81,6 +85,10 @@ def index():
 
         session["7DMA CHG"] = list(moving_averages.rounding(temp_df["7DMA CHG"] * 100))
 
+        session["Close"] = list(moving_averages.rounding(temp_df["Close"]))
+
+        session["% Change"] = list(moving_averages.rounding(daily_returns(temp_df)["daily_returns"]))
+
         session['temp'] = list(
             zip(
                 session["Date"],
@@ -102,13 +110,13 @@ def index():
                 )
             )
 
-        return redirect(url_for("moving_averages"))
+        return redirect(url_for("MovAvg"))
     
     return render_template("base.html",form=form)
 
-@app.route('/moving_averages')
-def insights():
-    return render_template("moving_averages.html")
+@app.route('/MovAvg')
+def MovAvg():
+    return render_template("MovAvg.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
