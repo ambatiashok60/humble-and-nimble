@@ -1,0 +1,89 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+
+    <title> H&N Moving Averages </title>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container insights-main">
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th class="date">Date</th>
+                <th>Close</th>
+                <th>200DMA</th>
+                <th>100DMA</th>
+                <th>50DMA</th>
+                <th>30DMA</th>
+                <th>20DMA</th>
+                <th>14DMA</th>
+                <th>7DMA</th>
+                <th>% CHG 200DMA</th>
+                <th>% CHG 100DMA</th>
+                <th>% CHG 50DMA</th>
+                <th>% CHG 30DMA</th>
+                <th>% CHG 20DMA</th>
+                <th>% CHG 14DMA</th>
+                <th>% CHG 7DMA</th>
+              </tr>
+            </thead>
+            {% for item in session['temp'][::-1] %}
+            <tbody>
+              <tr>
+                <td class="date">{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+                <td>{{ item[4] }}</td>
+                <td>{{ item[5] }}</td>
+                <td>{{ item[6] }}</td>
+                <td>{{ item[7] }}</td>
+                <td>{{ item[8] }}</td>
+                {% if item[9] > 0 %}
+                    <td class="positive-dma-chg">{{ item[9] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[9] }}</td>
+                {% endif %}
+                {% if item[10] > 0 %}
+                    <td class="positive-dma-chg">{{ item[10] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[10] }}</td>
+                {% endif %}
+                {% if item[11] > 0 %}
+                    <td class="positive-dma-chg">{{ item[11] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[11] }}</td>
+                {% endif %}
+                {% if item[12] > 0 %}
+                    <td class="positive-dma-chg">{{ item[12] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[12] }}</td>
+                {% endif %}
+                {% if item[13] > 0 %}
+                    <td class="positive-dma-chg">{{ item[13] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[13] }}</td>
+                {% endif %}
+                {% if item[14] > 0 %}
+                    <td class="positive-dma-chg">{{ item[14] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[14] }}</td>
+                {% endif %}
+                {% if item[15] > 0 %}
+                    <td class="positive-dma-chg">{{ item[15] }}</td>
+                {% else %}
+                    <td class="negative-dma-chg">{{ item[15] }}</td>
+                {% endif %}
+              </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+
+{% endblock %}

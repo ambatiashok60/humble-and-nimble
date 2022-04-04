@@ -28,3 +28,36 @@ label.input-group-text{
     margin-right: 3px;
 }
 
+div.container.insights-main{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 100%;
+}
+
+table{
+    border-collapse: separate;
+}
+
+th{
+    font-size: 12px;
+    width: 60px;
+}
+
+td{
+    font-size: 12px;
+}
+
+td.negative-dma-chg{
+    color: #E83A14;
+    font-weight: 500;
+}
+
+td.positive-dma-chg{
+    color: #4E9F3D;
+    font-weight: 500;
+}
+
+.date{
+    width: 10%;
+}
